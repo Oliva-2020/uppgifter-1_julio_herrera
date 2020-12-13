@@ -36,11 +36,11 @@ public class UPPGIFT3_Stoppuret3 extends Application {
 		
 		launch(args);
 		
-	}
+	}	
 	
 	void change(Text text) {
 		
-		if(millis== 1000) {
+		if(millis == 1000) {
 			
 			secs++;
 			
@@ -113,7 +113,8 @@ public class UPPGIFT3_Stoppuret3 extends Application {
 		vBox = new VBox(30);
 		vBox.setAlignment(Pos.CENTER);
 		vBox.getChildren().addAll(text, hBox);
-		scene = new Scene(vBox, 200, 150);
+		//scene = new Scene(vBox, 200, 150);
+		scene = new Scene(vBox, 450, 600);  // width = 450, long = 600
 		stage.setScene(scene);
         stage.setTitle("Stopwatch");
 		stage.show();
