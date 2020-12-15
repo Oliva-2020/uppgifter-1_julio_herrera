@@ -9,7 +9,6 @@ import java.time.format.DateTimeFormatter;
  */
 public class DateTime {
 	
-	//LocalDateTime datumOchTid;
 	LocalDateTime dateAndTime;
 	DateTimeFormatter dtFormat;
 	String datumOchTidString;
