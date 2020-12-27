@@ -102,5 +102,7 @@ public class UPPGIFT4A_Personhanteraren extends Application {
 		return grid;
 		
 	}
+	
+	// OBS THE CODE IS NOT FINISHED.....
 
 }
