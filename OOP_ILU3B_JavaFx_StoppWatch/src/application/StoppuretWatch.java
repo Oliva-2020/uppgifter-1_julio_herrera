@@ -23,6 +23,8 @@ public class StoppuretWatch extends Application {
 	Stage window;
 	boolean startad = true;
 	
+	
+	
 	//private final TableView<Chart> chart = new TableView<>();
 	private final ObservableList<Chart> data = FXCollections.observableArrayList();
 	
