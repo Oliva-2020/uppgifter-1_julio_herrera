@@ -1,6 +1,8 @@
 package application;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -14,8 +16,9 @@ import javafx.stage.Stage;
  */
 public class UPPGIFT4A_Personhanteraren extends Application {
 	
+	private final TableView<Person> table = new TableView<>();
+	private final ObservableList<Person> personManagerList = FXCollections.observableArrayList();
 	
-
 	/**
 	 * @param args command line.
 	 */
@@ -70,7 +73,8 @@ public class UPPGIFT4A_Personhanteraren extends Application {
 		grid.add(new Label("First name"), 0, 2, 1, 1);
 		grid.add(new TextField(), 1, 2, 1, 1);
 		//grid.setPrefWidth(250);			// To set 'TextField' more narrow(estrecho)
-		//grid.setPrefWidth(1000);			// Even so does not increase to much. 
+		//grid.setPrefWidth(1000);			// Even so does not increase to much that to do is
+											// take off the blue stripe.
 		//grid.setMaxWidth(200);			// To set more narrow 'TextField'
 		
 		
@@ -104,7 +108,7 @@ public class UPPGIFT4A_Personhanteraren extends Application {
 //				+ "see Help for datails"), 1, 12, 1, 1);
 		grid.add(new Label("Different users and projects can"
 		+ " share the same compilation libraries\n"
-		+ "see Help for datails"), 1, 7, 1, 1);
+		+ "see Help for datails"), 1, 12, 1, 1);
 		
 		
 		
