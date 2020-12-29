@@ -70,7 +70,7 @@ public class UPPGIFT4A_Personhanteraren extends Application {
 		grid.add(new Label("First name"), 0, 2, 1, 1);
 		grid.add(new TextField(), 1, 2, 1, 1);
 		//grid.setPrefWidth(250);			// To set 'TextField' more narrow(estrecho)
-		grid.setPrefWidth(1000);			// Even so does not increase to much. 
+		//grid.setPrefWidth(1000);			// Even so does not increase to much. 
 		//grid.setMaxWidth(200);			// To set more narrow 'TextField'
 		
 		
@@ -99,9 +99,13 @@ public class UPPGIFT4A_Personhanteraren extends Application {
 		 */
 //		grid.add(new Label("Different us"), 1, 12, 1, 1);
 		
+//		grid.add(new Label("Different users and projects can"
+//				+ " share the same compilation libraries\n"
+//				+ "see Help for datails"), 1, 12, 1, 1);
 		grid.add(new Label("Different users and projects can"
-				+ " share the same compilation libraries\n"
-				+ "see Help for datails"), 1, 12, 1, 1);
+		+ " share the same compilation libraries\n"
+		+ "see Help for datails"), 1, 7, 1, 1);
+		
 		
 		
 		return grid;
