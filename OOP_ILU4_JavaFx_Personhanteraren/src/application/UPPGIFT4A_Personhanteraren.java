@@ -69,7 +69,10 @@ public class UPPGIFT4A_Personhanteraren extends Application {
 		
 		grid.add(new Label("First name"), 0, 2, 1, 1);
 		grid.add(new TextField(), 1, 2, 1, 1);
-		//00grid.setPrefWidth(250);
+		//grid.setPrefWidth(250);			// To set 'TextField' more narrow(estrecho)
+		grid.setPrefWidth(1000);			// Even so does not increase to much. 
+		//grid.setMaxWidth(200);			// To set more narrow 'TextField'
+		
 		
 		grid.add(new Label("Last name"), 0, 3, 1, 1);
 		grid.add(new TextField(), 1, 3, 1, 1);
@@ -80,7 +83,9 @@ public class UPPGIFT4A_Personhanteraren extends Application {
 		grid.add(new Separator(), 0, 5, 3, 1);
 		
 		FlowPane fp = new FlowPane(Orientation.HORIZONTAL, 10, 10);
-		fp.setAlignment(Pos.CENTER_RIGHT);
+		fp.setAlignment(Pos.CENTER_RIGHT);			// That start from the center to the right
+													// side.
+		//fp.setAlignment(Pos.BASELINE_RIGHT);			// It is the same as 'Pos.CENTER_RIGHT'
 		fp.getChildren().addAll(
 				new Button("Update"),
 				new Button("Add"),
