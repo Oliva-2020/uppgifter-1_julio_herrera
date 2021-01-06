@@ -18,6 +18,10 @@ public class UPPGIFT4A_Personhanteraren extends Application {
 	
 	private final TableView<Person> table = new TableView<>();
 	private final ObservableList<Person> personManagerList = FXCollections.observableArrayList();
+	private int String;
+	
+	// I supose to call the class 'Person'
+	Person persona = new Person( String);
 	
 	/**
 	 * @param args command line.
@@ -46,14 +50,44 @@ public class UPPGIFT4A_Personhanteraren extends Application {
 		root.add(leftbanner, 0, 0, 1, 1);
 		root.add(createGridPane(), 1, 0, 1, 1);
 		
-		Scene scene = new Scene(root, 800, 500);
+		//Scene scene = new Scene(root, 800, 500);
+		Scene scene = new Scene(root, 800, 800);
 		
 		stage.setTitle("JavaFX GridPane LAYOUT");
+		
+		/**
+		 * The call of 'setTableimage' method witch is that size of the table.
+		 */
+		setTableimage();
+		
+		/**
+		 * To fill in the list of person.
+		 */
+		fillTablepersonManagerList();
+		table.setItems(personManagerList);
+		
 		
 		stage.setScene(scene);
 		
 		stage.show();
 		
+	}
+
+	private void fillTablepersonManagerList() {
+		// This is the list of the people in the list.
+		personManagerList.addAll(new Person(1, "Maria Andersson"),
+								 new Person(2, "Lars Joghansso"),
+								 new Person(3, "Margareta Karlsson"),
+								 new Person(4, "Anders Nilsson"),
+								 new Person(5, 	"Eva Johan"));
+	
+	}
+
+	private void setTableimage() {
+		// The size of table
+		table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+		table.setPrefWidth(600);
+		table.setPrefHeight(600);		
 	}
 
 	public GridPane createGridPane() {
@@ -108,7 +142,9 @@ public class UPPGIFT4A_Personhanteraren extends Application {
 //				+ "see Help for datails"), 1, 12, 1, 1);
 		grid.add(new Label("Different users and projects can"
 		+ " share the same compilation libraries\n"
-		+ "see Help for datails"), 1, 12, 1, 1);
+		+ "see Help for datails"), 1, 50, 1, 1);			// , 1, 12, 1, 1) Normal. This is
+															// This is for keep the 
+															// the 'TextField' longer.
 		
 		
 		
