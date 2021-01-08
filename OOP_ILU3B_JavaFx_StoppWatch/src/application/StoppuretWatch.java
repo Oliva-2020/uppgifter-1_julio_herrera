@@ -35,14 +35,26 @@ public class StoppuretWatch extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
+		/**
+		 *  'window' variable with value 'primaryStage'
+		 */
 		window = primaryStage;
 		
+		/**
+		 * 'watch' object to call 'Watch' class.
+		 */
 		Watch watch = new Watch();
 		
+		/**
+		 * To create button.
+		 */
 		Button startStoppKnapp = new Button("START");
 		Button resetKnapp = new Button("RESET");
 		Button rensaKnapp = new Button("RENSA");
 		
+		/*
+		 * To set position and size of button.
+		 */
 		HBox hBoxKnappar = new HBox();
 		hBoxKnappar.setSpacing(20);
 		hBoxKnappar.getChildren().addAll(startStoppKnapp, resetKnapp, rensaKnapp);
@@ -51,6 +63,9 @@ public class StoppuretWatch extends Application {
 		startStoppKnapp.setPrefSize(100, 20);
 		startStoppKnapp.setStyle("-fx-background-color: lightgreen;");
 		
+		/**
+		 * To set the action of the button.
+		 */
 		startStoppKnapp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
