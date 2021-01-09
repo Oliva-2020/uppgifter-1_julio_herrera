@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  * @author Julio_Cesar Oliva_Herrera   12/19/2020
  *
  */
-public class UPPGIFT4A_Personhanteraren extends Application {
+public class UPPGIFT4B_Personhanteraren extends Application {
 	
 	private final TableView<Person> table = new TableView<>();
 	private final ObservableList<Person> personManagerList = FXCollections.observableArrayList();

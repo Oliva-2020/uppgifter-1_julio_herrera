@@ -120,10 +120,15 @@ public class StoppuretWatch extends Application {
 			}
 		});
 		
-		
+		/**
+		 * To create the table.
+		 */
 		TableView chart = new TableView();
 		chart.setEditable(true);
 		
+		/**
+		 * To create the columns.
+		 */
 		TableColumn column1 = new TableColumn("Date Time");
 		column1.setMinWidth(140);
 		column1.setCellValueFactory(new PropertyValueFactory<>("datumTid"));
