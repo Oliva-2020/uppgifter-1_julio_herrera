@@ -4,8 +4,10 @@ import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.*;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.TableView.TableViewSelectionModel;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
 import javafx.scene.text.*;
@@ -38,31 +40,121 @@ public class UPPGIFT4B_Personhanteraren extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		
-//		Person persona = new Person();
+		/**
+		 * This is to set 'Stage' 'SelectionModel'. It is an abstract class used by UI controls 
+		 * to provide a consistent API for maintaining selection.
+		 * WHAT DO: The type of the 'item' contained in the 'control' that can be selected.
+		 */
+		TableViewSelectionModel tsm = table.getSelectionModel();
+		tsm.setSelectionMode(SelectionMode.MULTIPLE);
+		/**
+		 * This is 'scene' object belong to Table.
+		 */
+//		Scene scene = new Scene(new Group());			// [NONEED] Does nothing.
+		
+		stage.setTitle("JavaFX GridPane and Table LAYOUT");	  	// §§§:-Belongs to TABLE Layout.-:§§§
+		
+		/**
+		 * This is 'stage' object belongs to TABLE.			// §§§:-Belongs to TABLE Layout.-:§§§ 
+		 */
+		stage.setWidth(800);
+		stage.setHeight(800);
+		
+		/**
+		 * This is to confirm that table appear.			 // §§§:-Belongs to TABLE Layout.-:§§§
+		 */
+		table.setEditable(true);
+		
+		/**
+		 * To set the first column.							// §§§:-Belongs to TABLE Layout.-:§§§
+		 */
+		TableColumn firstNameCol = new TableColumn("Fist Name");
+		firstNameCol.setMaxWidth(100);		
+		firstNameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+		
+		/**
+		 * TO SET the second column.						// §§§:-Belongs to TABLE Layout.-:§§§
+		 */
+		TableColumn lastNameCol = new TableColumn("Last Name");
+		lastNameCol.setMinWidth(100);
+		lastNameCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+
+		/**
+		 * TO SET the second column.						// §§§:-Belongs to TABLE Layout.-:§§§
+		 */
+		TableColumn aGeCol = new TableColumn("Age");
+		aGeCol.setMinWidth(100);
+		aGeCol.setCellValueFactory(new PropertyValueFactory<>("aGe"));
+
+		
+		/**
+		 * This is only a check control for resize of column and data.
+		 * 															//§§§:-Belongs to TABLE Layout.-:§§§
+		 */
+		table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+		table.setPlaceholder(new Label("No visible columns and/or data exist."));
+		
+		// TODO GridPane
+//		GridPane root = new GridPane();
+		
+		
+		
+		// ..........................TODO MORE CODE.................................
+		
+//		stage.setScene(scene);
+//		
+//		stage.show();
+		
 		
 		/**
 		 * Object 'root' that call 'GridPane' class.
 		 */
-		GridPane root = new GridPane();
+//		GridPane root = new GridPane();			// ***Belongs to GridPane Layout.***
+		GridPane gridPaneTable = this.createGridPane();
+		
+		// TODO CREAT 'deleButton' object Button. [NONEED]
 		
 		/**
-		 * Object 'leftbanner' that call 'FlowPane' class.
+		 * ADD the GridPane and the Delte Button to the VBox[NONEED]
 		 */
-		FlowPane leftbanner = new FlowPane();
-		leftbanner.setPrefWidth(100);
+		VBox root = new VBox();
+		root.getChildren().addAll(gridPaneTable, table);
 		
-		String bgStyle = "-fx-background-color: lightblue;"
-				+ "-fx-background-radius: 0%;"
-				+ "-fx-background-inset: 5px;";
-		leftbanner.setStyle(bgStyle);
+		/**
+		 * SET the Padding and Border for the VBox
+		 */
+		root.setSpacing(5);
 		
-		root.add(leftbanner, 0, 0, 1, 1);
-		root.add(createGridPane(), 1, 0, 1, 1);
+		root.setStyle("-fx-padding: 10; -fx-border-style: solid inside;"
+				+ "-fx-border-width: 2;"
+				+ "-fx-border-insets: 5;"
+				+ "-fx-border-radius: 5;"
+				+ "-fx-border-color: blue;");
+		
+		Scene scene = new Scene(root);
+		
+		
+		
+		/**
+		 * Object 'leftbanner' that call 'FlowPane' class.			// ***Belongs to GridPane Layout.***
+		 * This is the blue stripe to the left of stage.
+		 */
+//		FlowPane leftbanner = new FlowPane();
+//		leftbanner.setPrefWidth(100);
+//		
+//		String bgStyle = "-fx-background-color: lightblue;"
+//				+ "-fx-background-radius: 0%;"
+//				+ "-fx-background-inset: 5px;";
+//		leftbanner.setStyle(bgStyle);
+		
+//		root.add(leftbanner, 0, 0, 1, 1);		// ***Belongs to GridPane Layout.***	
+//		root.add(createGridPane(), 1, 0, 1, 1);			// ***Belongs to GridPane Layout.***
 		
 		//Scene scene = new Scene(root, 800, 200);
-		Scene scene = new Scene(root, 800, 800);
+//		Scene scene = new Scene(root, 800, 800);			// ***Belongs to GridPane Layout.***
+//		Scene scene = new Scene(800, 800);			// ***Belongs to GridPane Layout.***
 		
-		stage.setTitle("JavaFX GridPane LAYOUT");
+//		stage.setTitle("JavaFX GridPane LAYOUT");			// ***Belongs to GridPane Layout.***
 		
 		/**
 		 * The call of 'setTableimage' method witch is that size of the table.
@@ -73,42 +165,41 @@ public class UPPGIFT4B_Personhanteraren extends Application {
 		 * Here start the table part.
 		 */		
 		// TODO
-//		final Label label = new Label("");
-//		label.setFont(new Font("Arial", 20));
-//		
-//		table.setEditable(true);
-//		
-//		TableColumn firstNameCol = new TableColumn("First Name");
-//		firstNameCol.setMinWidth(100);
-//		firstNameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-//		
-//		// TODO
-//		TableColumn lastNameCol = new TableColumn("Last Name");
-//		lastNameCol.setMinWidth(100);
-//		lastNameCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));
-//		
-//		// TODO
-//		TableColumn aGeCol = new TableColumn("Age");
-//		aGeCol.setMinWidth(100);
-//		aGeCol.setCellValueFactory(new PropertyValueFactory<>("age"));
-//		
-//		table.setItems(personManagerList);
-//		table.getColumns().addAll(firstNameCol, lastNameCol, aGeCol);
-//		
-//		// TODO
-//		final TextField addFirstName = new TextField();
-//		addFirstName.setPromptText("First Name");
-//		addFirstName.setMaxWidth(firstNameCol.getPrefWidth());
-//		final TextField addLastName = new TextField();
-//		addLastName.setMaxWidth(lastNameCol.getPrefWidth());
-//		addLastName.setPromptText("Last Name");
-//		// TODO
-//		final TextField addAge = new TextField();
-//		addAge.setMaxWidth(aGeCol.getPrefWidth());
-//		addAge.setPromptText("Age");
+		final Label label = new Label("");
+		label.setFont(new Font("Arial", 20));
 		
-//		final 
+		table.setEditable(true);
 		
+		TableColumn first2NameCol = new TableColumn("First Name");
+		firstNameCol.setMinWidth(100);
+		firstNameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+		
+		// TODO
+		TableColumn last2NameCol = new TableColumn("Last Name");
+		lastNameCol.setMinWidth(100);
+		lastNameCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+		
+		// TODO
+		TableColumn aGe2Col = new TableColumn("Age");
+		aGeCol.setMinWidth(100);
+		aGeCol.setCellValueFactory(new PropertyValueFactory<>("age"));
+		
+		table.setItems(personManagerList);
+		table.getColumns().addAll(first2NameCol, last2NameCol, aGe2Col);
+		
+		// TODO
+		final TextField addFirstName = new TextField();
+		addFirstName.setPromptText("First Name");
+		addFirstName.setMaxWidth(firstNameCol.getPrefWidth());
+		final TextField addLastName = new TextField();
+		addLastName.setMaxWidth(lastNameCol.getPrefWidth());
+		addLastName.setPromptText("Last Name");
+//		// TODO
+		final TextField addAge = new TextField();
+		addAge.setMaxWidth(aGeCol.getPrefWidth());
+		addAge.setPromptText("Age");
+				
+		//stage.setScene(scene);
 		stage.setScene(scene);
 		
 		stage.show();
@@ -128,13 +219,13 @@ public class UPPGIFT4B_Personhanteraren extends Application {
 	/**
 	 * This 'setTableimage' method is with Table mutter but still alone 
 	 */
-	private void setTableimage() {
-		// The size of table
-		table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-		table.setPrefWidth(600);
-		table.setPrefHeight(600);		
-	}
-
+//	private void setTableimage() {
+//		// The size of table
+//		table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+//		table.setPrefWidth(600);
+//		table.setPrefHeight(600);		
+//	}
+//
 	public GridPane createGridPane() {
 		// TODO Auto-generated method stub
 		
