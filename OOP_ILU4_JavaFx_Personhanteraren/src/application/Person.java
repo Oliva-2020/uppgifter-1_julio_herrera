@@ -1,49 +1,58 @@
 package application;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class Person {
 	
-	private final SimpleStringProperty firstName;
-	private final SimpleStringProperty lastName;
-	private int age;
-	
-	private Person(String fName, String lName, int aGe) {
-		
-		this.firstName = new SimpleStringProperty(fName);
-		this.lastName = new SimpleStringProperty(lName);
-		this.age = aGe;
-		
+	/**
+	 * SOLUTION to the problem can not retrieve property.
+	 */
+//	private final SimpleStringProperty firstName;			// SOURCE TO THE PROBLEM.
+	private StringProperty firstName = new SimpleStringProperty();
+	public final StringProperty firstNameProperty()	{
+		return firstName;
 	}
 	
-	/**
-	 * 
-	 * @return First name.
-	 */
-	public String getFirsName() {
-		return firstName.get();		
+	public final String getFirstName() {
+		return firstName.get();
+	}
+	
+	public final void SetFirstName(String value) {
+		firstName.set(value);
+	}
+	
+	private final SimpleStringProperty lastName;
+	private final SimpleStringProperty email;
+	
+	Person(String fName, String lName, String email) {
+	
+	this.firstName = new SimpleStringProperty(fName);
+	this.lastName = new SimpleStringProperty(lName);
+	this.email = new SimpleStringProperty(email);
+	
+}
+	
+	public String getFirsName() {		
+		return firstName.getName();
 	}
 	
 	public void setFirsName(String fName) {
-		firstName.set(fName);
+		this.firstName.setValue(fName);
 	}
 	
-	/**
-	 * Last name.
-	 */
 	public String getLastName() {
-		return lastName.get();	
+		return lastName.get();
 	}
 	
 	public void setLastName(String lName) {
-		lastName.set(lName);
+		this.lastName.set(lName);
 	}
 	
-	public int getAge() {
-		return age;		
-	}
-	
-	public void setAge (int aGe) {
-		this.age = aGe;
+	public String getEmail() {
+	return email.get();		
+}
+	public void setEmail (String emailA) {
+		email.set(emailA);
 	}
 }

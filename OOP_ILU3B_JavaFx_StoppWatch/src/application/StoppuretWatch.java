@@ -57,7 +57,7 @@ public class StoppuretWatch extends Application {
 		 */
 		HBox hBoxKnappar = new HBox();
 		hBoxKnappar.setSpacing(20);
-		hBoxKnappar.getChildren().addAll(startStoppKnapp, resetKnapp, rensaKnapp);
+		hBoxKnappar.getChildren().addAll(startStoppKnapp, resetKnapp, rensaKnapp);// TO GET The buttons
 		
 		startStoppKnapp.setStyle("-fx-font: normal bold 20px 'serif'");
 		startStoppKnapp.setPrefSize(100, 20);
