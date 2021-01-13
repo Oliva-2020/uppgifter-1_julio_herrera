@@ -141,6 +141,9 @@ public class UPPGIFT4B_Personhanteraren extends Application {
 				deleteButton = new Button("Delete"));
 		grid.add(fp, 0, 6, 3, 1);
 		
+		/**
+		 * PUT IN ACTION The ' Add' button.
+		 */
 		addButton.setOnAction((ActionEvent e) -> { 
 			personManagerList.add(new Person(addFirstName.getText(), 
 					addLastName.getText(), 
@@ -150,7 +153,13 @@ public class UPPGIFT4B_Personhanteraren extends Application {
 			addAge.clear();
 			
 		});
-				
+		
+		/**
+		 * PUT IN ACTION The 'Delete' button.
+		 */
+		// TODO
+		
+		
 		return grid;
 		
 	}
